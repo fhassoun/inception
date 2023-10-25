@@ -54,5 +54,5 @@ volumes:
       o: bind
 
 networks:
-  network:
-    driver: bridge
+  network: {}
+   # driver: bridge
