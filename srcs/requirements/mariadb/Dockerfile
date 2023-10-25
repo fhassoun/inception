@@ -1,4 +1,4 @@
-FROM debian:buster
+FROM debian:bookworm
 
 #this exposes the port only to the other docker containers, but not to host
 EXPOSE 3306
@@ -25,7 +25,7 @@ RUN rm -rf create_user.sh
 CMD ["mysqld_safe"]
 
 # test if you can connect to maridb database
-# sudo docker exec -it mariadb mariadb --user tblaase -proot
+# sudo docker exec -it mariadb mariadb --user fhassoun -pMyP@ssword1
 # SHOW DATABASES;
 # USE wordpress;
 # SHOW TABLES
