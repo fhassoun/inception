@@ -15,5 +15,6 @@ clean:
 	@sudo hostsed rm 127.0.0.1 fhassoun.42.fr && echo "successfully removed fhassoun.42.fr from /etc/hosts"
 	@sudo $(DC) down -v --remove-orphans     
 	@sudo docker rmi -f $$(docker images -q) 
+	@sudo docker system prune -a
 
 .PHONY: all down re clean
