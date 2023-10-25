@@ -1,19 +1,19 @@
 all:
-	@if [ -d "/home/$USER/data" ]; then \
-		echo "/home/$USER/data already exists"; else \
-		mkdir /home/$USER/data; \
+	@if [ -d "/home/fhassoun/data" ]; then \
+		echo "/home/fhassoun/data already exists"; else \
+		mkdir /home/fhassoun/data; \
 		echo "data directory created successfully"; \
 	fi
 
-	@if [ -d "/home/$USER/data/wordpress" ]; then \
-		echo "/home/$USER/data/wordpress already exists"; else \
-		mkdir /home/$USER/data/wordpress; \
+	@if [ -d "/home/fhassoun/data/wordpress" ]; then \
+		echo "/home/fhassoun/data/wordpress already exists"; else \
+		mkdir /home/fhassoun/data/wordpress; \
 		echo "wordpress directory created successfully"; \
 	fi
 
-	@if [ -d "/home/$USER/data/mariadb" ]; then \
-		echo "/home/$USER/data/mariadb already exists"; else \
-		mkdir /home/$USER/data/mariadb; \
+	@if [ -d "/home/fhassoun/data/mariadb" ]; then \
+		echo "/home/fhassoun/data/mariadb already exists"; else \
+		mkdir /home/fhassoun/data/mariadb; \
 		echo "mariadb directory created successfully"; \
 	fi
 	@sudo hostsed add 127.0.0.1 fhassoun.42.fr && echo "successfully added fhassoun.42.fr to /etc/hosts"
