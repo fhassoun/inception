@@ -10,3 +10,9 @@ COPY ./tools/initial_db.sql /var/www/
 RUN service mysql start && mysql < /var/www/initial_db.sql && rm -f /var/www/initial_db.sql;
 
 CMD ["mysqld_safe"]
+
+# test if you can connect to maridb database
+# sudo docker exec -it mariadb mariadb --user fhassoun -pMyP@ssword1
+# SHOW DATABASES;
+# USE wordpress;
+# SHOW TABLES
