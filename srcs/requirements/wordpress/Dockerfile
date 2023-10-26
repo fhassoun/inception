@@ -29,8 +29,8 @@ COPY ./conf/www.conf /etc/php/7.3/fpm/pool.d/
 
 RUN mkdir /run/php
 
-COPY ./tools/user_script.sh /usr/local/bin/
-RUN chmod +x /usr/local/bin/user_script.sh
+# COPY ./tools/user_script.sh /usr/local/bin/
+# RUN chmod +x /usr/local/bin/user_script.sh
 
 COPY ./tools/wp_script.sh /usr/local/bin/
 RUN chmod +x /usr/local/bin/wp_script.sh
