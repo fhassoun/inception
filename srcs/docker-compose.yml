@@ -23,6 +23,7 @@ services:
         - MYSQL_USER=${MYSQL_USER}
         - MYSQL_PASSWORD=${MYSQL_PASSWORD}
         - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+        
 
     volumes:
       - mariadb_data:/var/lib/mysql
@@ -39,6 +40,11 @@ services:
     build:
       context: ./requirements/wordpress
       dockerfile: Dockerfile
+      args:
+        - WP_DOMAIN=${WP_DOMAIN}
+        - WP_ADMIN_USERNAME=${WP_ADMIN_USERNAME}
+        - WP_ADMIN_EMAIL=${WP_ADMIN_EMAIL}
+        - WP_ADMIN_PASSWORD=${WP_ADMIN_PASSWORD}
     restart: always
     env_file:
       - .env

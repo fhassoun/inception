@@ -15,5 +15,14 @@ else
 	sed -i "s/localhost/$MYSQL_HOSTNAME/g" wp-config-sample.php
 	sed -i "s/database_name_here/$MYSQL_DATABASE/g" wp-config-sample.php
 	cp wp-config-sample.php wp-config.php
+
+	curl "http://$WP_DOMAIN/wp-admin/install.php?step=2" \
+  --data-urlencode "weblog_title=$WP_DOMAIN"\
+  --data-urlencode "user_name=$WP_ADMIN_USERNAME" \
+  --data-urlencode "admin_email=$WP_ADMIN_EMAIL" \
+  --data-urlencode "admin_password=$WP_ADMIN_PASSWORD" \
+  --data-urlencode "admin_password2=$WP_ADMIN_PASSWORD" \
+  --data-urlencode "pw_weak=1"
+
 fi
 exec "$@"

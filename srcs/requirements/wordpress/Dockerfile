@@ -1,5 +1,10 @@
 FROM debian:buster
 
+ARG WP_DOMAIN=${WP_DOMAIN}
+ARG WP_ADMIN_USERNAME=${WP_ADMIN_USERNAME}
+ARG WP_ADMIN_EMAIL=${WP_ADMIN_EMAIL}
+ARG WP_ADMIN_PASSWORD=${WP_ADMIN_PASSWORD}
+
 RUN apt-get update && apt-get -y install \
  wget \
  curl \
