@@ -44,6 +44,7 @@ services:
         - WP_ADMIN_USERNAME=${WP_ADMIN_USERNAME}
         - WP_ADMIN_EMAIL=${WP_ADMIN_EMAIL}
         - WP_ADMIN_PASSWORD=${WP_ADMIN_PASSWORD}
+        - WP_TITLE=${WP_TITLE}
     restart: always
     env_file:
       - .env

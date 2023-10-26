@@ -4,6 +4,7 @@ ARG WP_DOMAIN=${WP_DOMAIN}
 ARG WP_ADMIN_USERNAME=${WP_ADMIN_USERNAME}
 ARG WP_ADMIN_EMAIL=${WP_ADMIN_EMAIL}
 ARG WP_ADMIN_PASSWORD=${WP_ADMIN_PASSWORD}
+ARG WP_TITLE=${WP_TITLE}
 
 RUN apt-get update && apt-get -y install \
  wget \
@@ -33,10 +34,11 @@ RUN chmod +x /usr/local/bin/user_script.sh
 
 COPY ./tools/wp_script.sh /usr/local/bin/
 RUN chmod +x /usr/local/bin/wp_script.sh
-ENTRYPOINT ["/usr/local/bin/wp_script.sh"]
+#ENTRYPOINT ["/usr/local/bin/wp_script.sh"]
 
 WORKDIR /var/www/html/
 
 EXPOSE 9000
 
-CMD ["/usr/sbin/php-fpm7.3", "-F" ]
+#CMD ["/usr/sbin/php-fpm7.3", "-F" ]
+CMD ["bash", "/usr/local/bin/wp_script.sh"]
