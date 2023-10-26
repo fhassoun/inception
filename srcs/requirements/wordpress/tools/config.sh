@@ -1,11 +1,6 @@
 #!bin/bash
 cd /var/www/wordpress
-if [ -f ./wp-config.php ]
-then
-	echo "Wordpress already downloaded"
-else
-	wp core download --allow-root
-fi
+
 
 wp core config	--dbhost=$MYSQL_HOSTNAME \
 				--dbname=$MYSQL_DATABASE \
