@@ -1,11 +1,20 @@
 #!/bin/sh
+cd /var/www/wordpress
 
-curl "http://$WP_DOMAIN/wp-admin/install.php?step=2" \
-	--data-urlencode "weblog_title=$WP_DOMAIN"\
-	--data-urlencode "user_name=$WP_ADMIN_USERNAME" \
-	--data-urlencode "admin_email=$WP_ADMIN_EMAIL" \
-	--data-urlencode "admin_password=$WP_ADMIN_PASSWORD" \
-	--data-urlencode "admin_password2=$WP_ADMIN_PASSWORD" \
-	--data-urlencode "pw_weak=1"
+wp core config	--dbhost=$MYSQL_HOSTNAME \
+				--dbname=$MYSQL_DATABASE \
+				--dbuser=$MYSQL_USER \
+				--dbpass=$MYSQL_PASSWORD \
+				--allow-root
+
+wp core install --title=$WP_TITLE \
+				--admin_user=$WP_ADMIN_USER \
+				--admin_password=$WP_ADMIN_PASSWORD \
+				--admin_email=$WP_ADMIN_EMAIL \
+				--url=$WP_URL \
+				--allow-root
+
+wp user create $WP_USER $WP_USER_MAIL --role=author --user_pass=$WP_USER_PASSWORD --allow-root
+cd -
 
 exec "$@"
