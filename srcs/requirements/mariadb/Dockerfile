@@ -17,7 +17,7 @@ RUN rm -rf create_user.sh
 CMD ["mysqld_safe"]
 
 # test if you can connect to maridb database
-# sudo docker exec -it mariadb mariadb --user fhassoun -pMyP@ssword1
+# sudo docker exec -it mariadb mariadb --user fhassoun -p1234
 # SHOW DATABASES;
 # USE wordpress;
 # SHOW TABLES
