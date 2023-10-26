@@ -21,10 +21,10 @@ all:
 
 clean:
 	sudo docker compose -f ./srcs/docker-compose.yml down --rmi all -v
-	sudo docker system prune -a
 
 fclean: clean
 	@sudo hostsed rm 127.0.0.1 fhassoun.42.fr && echo "successfully removed fhassoun.42.fr from /etc/hosts"
+	@sudo docker system prune -a
 
 re: fclean all
 
