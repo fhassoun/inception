@@ -33,6 +33,7 @@ ls:
 	sudo docker ps
 
 delete:
+	sudo docker compose -f ./srcs/docker-compose.yml down --rmi all -v
 	@if [ -d "/home/fhassoun/data/wordpress" ]; then \
 	sudo rm -rf /home/fhassoun/data/wordpress/* && \
 	echo "successfully removed all contents from /home/fhassoun/data/wordpress/"; \

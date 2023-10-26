@@ -11,6 +11,7 @@ COPY ./tools/initial_db.sql /var/www/
 #RUN service mysql start 
 
 COPY tools/create_user.sh /
+RUN chmod +x ./create_user.sh
 RUN bash ./create_user.sh
 RUN rm -rf create_user.sh
 
