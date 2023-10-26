@@ -39,7 +39,6 @@ services:
       - mariadb
     build:
       context: ./requirements/wordpress
-      dockerfile: Dockerfile
       args:
         - WP_DOMAIN=${WP_DOMAIN}
         - WP_ADMIN_USERNAME=${WP_ADMIN_USERNAME}
