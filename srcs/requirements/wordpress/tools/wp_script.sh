@@ -10,8 +10,8 @@ else
 	rm -rf latest.tar.gz
 	rm -rf wordpress
 
-	sed -i "s/username_here/$WP_USER/g" wp-config-sample.php
-	sed -i "s/password_here/$WP_PASSWORD/g" wp-config-sample.php
+	sed -i "s/username_here/$MYSQL_HOSTNAME/g" wp-config-sample.php
+	sed -i "s/password_here/$MYSQL_PASSWORD/g" wp-config-sample.php
 	sed -i "s/localhost/$MYSQL_HOSTNAME/g" wp-config-sample.php
 	sed -i "s/database_name_here/$MYSQL_DATABASE/g" wp-config-sample.php
 	cp wp-config-sample.php wp-config.php
