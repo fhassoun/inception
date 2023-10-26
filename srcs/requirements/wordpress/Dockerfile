@@ -34,11 +34,11 @@ RUN mkdir /run/php
 
 COPY ./tools/wp_script.sh /usr/local/bin/
 RUN chmod +x /usr/local/bin/wp_script.sh
-#ENTRYPOINT ["/usr/local/bin/wp_script.sh"]
+ENTRYPOINT ["/usr/local/bin/wp_script.sh"]
 
-#WORKDIR /var/www/html/
+WORKDIR /var/www/html/
 
 EXPOSE 9000
 
-#CMD ["/usr/sbin/php-fpm7.3", "-F" ]
-CMD ["bash", "/usr/local/bin/wp_script.sh"]
+CMD ["/usr/sbin/php-fpm7.3", "-F" ]
+# CMD ["bash", "/usr/local/bin/wp_script.sh"]
