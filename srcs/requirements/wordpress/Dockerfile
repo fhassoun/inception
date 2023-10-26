@@ -36,7 +36,7 @@ COPY ./tools/wp_script.sh /usr/local/bin/
 RUN chmod +x /usr/local/bin/wp_script.sh
 #ENTRYPOINT ["/usr/local/bin/wp_script.sh"]
 
-WORKDIR /var/www/html/
+#WORKDIR /var/www/html/
 
 EXPOSE 9000
 
