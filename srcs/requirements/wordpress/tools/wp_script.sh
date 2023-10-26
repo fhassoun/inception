@@ -23,6 +23,10 @@ fi
 
 /usr/sbin/php-fpm7.3 -F
 
-wp user create ${WP_ADMIN_USERNAME} ${WP_ADMIN_EMAIL} --role=administrator --user_pass=${WP_ADMIN_PASSWORD} --allow-root
+wp core config --dbhost=${MYSQL_HOSTNAME} --dbname=${MYSQL_DATABASE} --dbuser=${MYSQL_USER} --dbpass=${MYSQL_PASSWORD} --allow-root
+wp core install --title=${WP_TITLE} --admin_user=${WP_ADMIN_USERNAME} --admin_password=${WP_ADMIN_PASSWORD} --admin_email=${WP_ADMIN_EMAIL} --url=${WP_URL} --allow-root
+
+
+
 wp user create ${WP_USER} ${WP_USER_MAIL} --role=subscriber --user_pass=${WP_USER_PASSWORD} --allow-root		
 exec "$@"
